@@ -58,6 +58,8 @@ gulp.task('inject', ['sass'], function() {
 });
 
 gulp.task('webserver', function() {
+  console.log('Server started on localhost:8080');
+
   connect.server({
     livereload: true,
     root: ['.', 'dist']
