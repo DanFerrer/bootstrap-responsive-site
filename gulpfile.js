@@ -2,9 +2,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     fontAwesome = require('node-font-awesome'),
     handlebars = require('gulp-compile-handlebars'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
     imagemin = require('gulp-imagemin'),
-    inject = require('gulp-inject'),
     connect = require('gulp-connect');
 
 var bootstrapDir = './node_modules/bootstrap-sass/',
@@ -33,11 +32,6 @@ var scss = {
   }
 };
 
-var injectOpts = {
-  addRootSlash: false,
-  ignorePath: ['src', 'dist']
-};
-
 gulp.task('imgs', function() {
   return gulp.src(images.in).pipe(imagemin()).pipe(gulp.dest(images.out));
 });
@@ -53,12 +47,6 @@ gulp.task('sass', ['fonts'], function() {
     .pipe(connect.reload());
 });
 
-gulp.task('inject', ['sass'], function() {
-  return gulp.src(source + 'index.html')
-    .pipe(inject(gulp.src(scss.out + '*.css'), injectOpts))
-    .pipe(gulp.dest(dest));
-});
-
 gulp.task('webserver', function() {
   console.log('Server started on localhost:8080');
 
@@ -68,7 +56,11 @@ gulp.task('webserver', function() {
   });
 });
 
-gulp.task('default', ['inject', 'webserver'], function () {
+gulp.task('handlebars', function() {
+
+});
+
+gulp.task('default', ['webserver'], function () {
   gulp.watch(scss.watch, ['sass']);
 });
 
