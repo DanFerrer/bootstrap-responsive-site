@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     fontAwesome = require('node-font-awesome'),
+    handlebars = require('gulp-compile-handlebars'),
+    rename = require('gulp-rename');
     imagemin = require('gulp-imagemin'),
     inject = require('gulp-inject'),
     connect = require('gulp-connect');
