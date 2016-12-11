@@ -1,28 +1,28 @@
 {
   "name": "bootstrap-responsive-site",
   "version": "1.0.0",
-  "description": "bootstrap 3 responsive site with gulp",
-  "main": "index.js",
+  "description": "bootstrap 3 responsive site with es6, gulp, and browsersync",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dan Ferrer",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "fontawesome": "^4.5.0",
-    "node-font-awesome": "^1.0.2"
-  },
   "devDependencies": {
-    "eslint": "^3.9.1",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "eslint": "^3.11.0",
+    "eslint-plugin-import": "^2.2.0",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "gulp-compile-handlebars": "^0.6.1",
-    "gulp-connect": "^5.0.0",
     "gulp-imagemin": "^3.1.1",
-    "gulp-inject": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
-    "gulp-svgmin": "^1.2.3",
-    "svgmin": "^0.1.0"
+    "jquery": "^3.1.1"
+  },
+  "dependencies": {
+    "angular-materialize": "^0.2.1"
   }
 }
